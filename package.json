@@ -1,0 +1,12 @@
+{
+  "name": "smart-axiata-aionos-port-twin-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Front-end-only Agentic Port Twin demo platform for SMART Axiata x AIonOS.",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

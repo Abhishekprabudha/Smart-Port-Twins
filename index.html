@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMART Axiata × AIonOS | Agentic Port Twin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <div class="aurora"></div>
+  <header class="topbar">
+    <div class="brand"><span class="smart">SMART AXIATA</span><span class="x">×</span><span>AIonOS</span></div>
+    <nav>
+      <a href="#mission">Mission</a>
+      <a href="#agents">Agents</a>
+      <a href="#telemetry">Telemetry</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#demo">Demo</a>
+    </nav>
+    <div class="live-pill"><span></span> LIVE PORT TWIN</div>
+  </header>
+
+  <main>
+    <section class="hero" id="mission">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/images/port_twin_slide.png">
+        <source src="assets/videos/agentic_port_twin_demo.webm" type="video/webm" />
+        <source src="assets/videos/port_terminal_operations.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Cambodia-ready port transformation proposition</p>
+        <h1>From connected port to <span>self-optimising trade network</span></h1>
+        <p class="lede">A live agentic port twin that senses berth, yard, gate, dispatch, documentation, safety, equipment and commercial signals — then simulates, recommends and executes governed next-best actions.</p>
+        <div class="hero-actions">
+          <button class="primary" data-scroll="#agents">Explore Agents</button>
+          <button class="secondary" data-scroll="#telemetry">Open Telemetry</button>
+        </div>
+      </div>
+      <div class="command-card glass">
+        <div class="card-title">Twin Operating Loop</div>
+        <div class="loop-grid">
+          <div><strong>01</strong><span>Sense</span></div>
+          <div><strong>02</strong><span>Predict</span></div>
+          <div><strong>03</strong><span>Decide</span></div>
+          <div><strong>04</strong><span>Act</span></div>
+        </div>
+        <div class="pulse-line"></div>
+        <p id="heroEvent">Loading live event stream...</p>
+      </div>
+    </section>
+
+    <section class="metrics-strip">
+      <div><span id="mDwell">24%</span><p>Dwell reduction ambition</p></div>
+      <div><span id="mRehandles">&lt;5%</span><p>Unplanned re-handles target</p></div>
+      <div><span id="mCrane">+15%</span><p>Crane productivity uplift</p></div>
+      <div><span id="mQueue">30%</span><p>Truck queue reduction ambition</p></div>
+      <div><span id="mLeakage">3%</span><p>Revenue leakage recovery</p></div>
+    </section>
+
+    <section class="section" id="agents">
+      <div class="section-head">
+        <p class="eyebrow">Agent portfolio</p>
+        <h2>All deck agents converted into a live telemetry cockpit</h2>
+        <p>Each agent has signals, decision logic, next-best actions, KPI tiles and real-time synthetic telemetry for demo storytelling.</p>
+      </div>
+      <div class="agent-layout">
+        <aside class="agent-list" id="agentList"></aside>
+        <article class="agent-detail glass" id="agentDetail"></article>
+      </div>
+    </section>
+
+    <section class="section telemetry" id="telemetry">
+      <div class="section-head compact">
+        <p class="eyebrow">Live telemetry</p>
+        <h2>Port command center</h2>
+      </div>
+      <div class="telemetry-grid">
+        <div class="panel chart-panel glass">
+          <div class="panel-top"><h3>KPI movement every 5 minutes</h3><span id="simClock">12:00</span></div>
+          <canvas id="kpiChart" width="840" height="360"></canvas>
+        </div>
+        <div class="panel glass">
+          <div class="panel-top"><h3>Agent event stream</h3><span class="tag">autonomous loop</span></div>
+          <div class="event-stream" id="eventStream"></div>
+        </div>
+        <div class="panel glass">
+          <div class="panel-top"><h3>Vessels & berth risk</h3><span class="tag">AIS + TOS</span></div>
+          <div id="vesselTable"></div>
+        </div>
+        <div class="panel glass">
+          <div class="panel-top"><h3>Equipment health</h3><span class="tag">IoT + CMMS</span></div>
+          <div id="equipmentList"></div>
+        </div>
+        <div class="panel glass">
+          <div class="panel-top"><h3>Gate queue heat</h3><span class="tag">VBS + GPS</span></div>
+          <div id="gateLanes"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="section-head">
+        <p class="eyebrow">Architecture</p>
+        <h2>Overlay existing terminal systems with governed agentic intelligence</h2>
+      </div>
+      <div class="architecture-map glass">
+        <div class="arch-node source">Port Data<br><span>TOS • AIS • OCR • CCTV • IoT</span></div>
+        <div class="arch-arrow"></div>
+        <div class="arch-node smart">Smart Edge<br><span>M2M • Fiber • Fleet • Devices</span></div>
+        <div class="arch-arrow"></div>
+        <div class="arch-node fabric">Event Layer<br><span>Streams • Lakehouse • Graph</span></div>
+        <div class="arch-arrow"></div>
+        <div class="arch-node core">AIonOS Agentic Twin Core<br><span>Planner • Simulator • Reasoner • Guardrails</span></div>
+        <div class="arch-arrow"></div>
+        <div class="arch-node action">Action Layer<br><span>TOS • Work Order • Alert • Billing • Portal</span></div>
+      </div>
+      <div class="control-grid">
+        <div class="glass"><b>Human-in-loop gates</b><p>Approval thresholds by risk, cost, customer, SLA and safety class.</p></div>
+        <div class="glass"><b>Evidence pack</b><p>Every recommendation includes sources, confidence, impact and alternatives.</p></div>
+        <div class="glass"><b>Rollback + fallback</b><p>Manual override, degraded mode and TOS rollback preserve operational safety.</p></div>
+        <div class="glass"><b>UniProtect governance</b><p>Role access, data residency, simulation replay, model drift and audit logs.</p></div>
+      </div>
+    </section>
+
+    <section class="section demo" id="demo">
+      <div class="section-head compact">
+        <p class="eyebrow">Visual demo assets</p>
+        <h2>Use the uploaded videos as a boardroom demo wrapper</h2>
+      </div>
+      <div class="video-grid">
+        <div class="video-card glass">
+          <video controls loop muted playsinline poster="assets/images/port_twin_slide.png"><source src="assets/videos/agentic_port_twin_demo.webm" type="video/webm" /></video>
+          <h3>Hero Agentic Port Twin</h3><p>Use as the opening cinematic for plan → simulate → decide → operate.</p>
+        </div>
+        <div class="video-card glass">
+          <video controls loop muted playsinline><source src="assets/videos/port_terminal_operations.mp4" type="video/mp4" /></video>
+          <h3>Port Operations Context</h3><p>Use as the live-operations backdrop behind KPI and telemetry panels.</p>
+        </div>
+        <div class="video-card glass">
+          <video controls loop muted playsinline><source src="assets/videos/container_yard_broll.mp4" type="video/mp4" /></video>
+          <h3>Container Yard B-roll</h3><p>Use for transitions between yard, berth, gate and dispatch agent flows.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>SMART Axiata × AIonOS</span>
+    <span>Agentic Port Twin HTML Platform</span>
+    <span>GitHub Pages ready • No backend</span>
+  </footer>
+
+  <script src="src/app.js"></script>
+</body>
+</html>
