@@ -1,0 +1,116 @@
+{
+  "portfolio": "SMART Axiata x AIonOS Agentic Port Twin",
+  "updated": "2026-06-24",
+  "agents": [
+    {
+      "id": "yard-stack-agent",
+      "name": "Yard Stack Optimization Agent",
+      "domain": "Yard",
+      "mission": "Continuously plans container stack locations and RTG/RMG move sequences to reduce re-handles and protect cut-offs.",
+      "signals": ["TOS location", "EDI/eDO status", "Historical dwell", "Gate bookings", "Reefer flags"],
+      "actions": ["Recommend stack slot", "Re-sequence moves", "Create exception task", "Alert planner", "Update TOS after approval"],
+      "kpis": {"Yard utilisation": 88, "Re-handles avoided": 94, "Moves/hour": 31, "Cut-off risk": 6},
+      "target": "<5% unplanned re-handles; 85-90% yard utilisation"
+    },
+    {
+      "id": "berth-crane-agent",
+      "name": "Berth & Crane Scheduling Twin",
+      "domain": "Berth",
+      "mission": "Simulates berth windows, crane gangs and move sequences under ETA, tide and weather uncertainty.",
+      "signals": ["AIS", "Vessel schedule", "Berth plan", "Crane roster", "Weather/tide"],
+      "actions": ["Recommend berth swap", "Reallocate crane gang", "Revise labour plan", "Publish recovery plan"],
+      "kpis": {"Berth overrun": 8, "Crane productivity": 115, "Vessel waiting": 12, "SLA adherence": 96},
+      "target": "<10% berth overrun; +10-15% crane productivity"
+    },
+    {
+      "id": "gate-queue-agent",
+      "name": "Gate Appointment + Queue Agent",
+      "domain": "Gate",
+      "mission": "Resequences truck appointments and gate lanes based on live queue, release and yard capacity signals.",
+      "signals": ["VBS", "OCR", "GPS", "Release status", "Yard capacity"],
+      "actions": ["Suggest new slot", "Hold truck before gate", "Open exception lane", "Notify transporter"],
+      "kpis": {"Truck turn-time": 42, "Queue length": 18, "Gate exceptions": 7, "Transporter NPS": 72},
+      "target": "15-30% queue reduction; improved transporter experience"
+    },
+    {
+      "id": "dispatch-orchestrator",
+      "name": "Port Dispatch Orchestrator",
+      "domain": "Hinterland",
+      "mission": "Connects terminal operations with trucks, rail and ICDs to protect cut-offs and reduce corridor dwell.",
+      "signals": ["TOS", "VBS", "GPS", "Rail schedule", "ICD events", "Order priority"],
+      "actions": ["Re-sequence loads", "Assign carrier", "Release priority container", "Trigger customer alerts"],
+      "kpis": {"Port dwell": 74, "On-time dispatch": 93, "Detention risk": 11, "Expedite cost": 8},
+      "target": "20-25% dwell reduction; departure SLA protection"
+    },
+    {
+      "id": "eta-predictor",
+      "name": "Vessel ETA + Berth Stay Predictor",
+      "domain": "Predictive Planning",
+      "mission": "Predicts arrival, berth stay and downstream plan disruption before it cascades into yard and gate operations.",
+      "signals": ["AIS", "Carrier schedules", "Weather", "Historical stay", "Terminal productivity"],
+      "actions": ["Update berth scenarios", "Trigger crane plan revision", "Warn customers", "Adjust appointments"],
+      "kpis": {"ETA accuracy": 91, "Plan stability": 86, "Berth idle time": 9, "Decision latency": 4},
+      "target": "Higher ETA accuracy; lower berth idle time"
+    },
+    {
+      "id": "equipment-health-agent",
+      "name": "Equipment Health + Maintenance Agent",
+      "domain": "Assets",
+      "mission": "Predicts failures and shifts equipment allocation before breakdowns impact vessel or yard performance.",
+      "signals": ["PLC/SCADA", "IoT sensors", "CMMS", "Maintenance logs", "Spare inventory"],
+      "actions": ["Create work order", "Reserve spare", "Propose equipment swap", "Escalate safety risk"],
+      "kpis": {"Equipment availability": 97, "Breakdowns": 3, "MTTR": 21, "Vessel impact": 5},
+      "target": "Availability up; MTTR and vessel impact down"
+    },
+    {
+      "id": "safety-agent",
+      "name": "Safety, Security + Compliance Agent",
+      "domain": "Safety",
+      "mission": "Detects unsafe movements and compliance deviations in high-risk port zones and creates auditable interventions.",
+      "signals": ["CCTV", "Access control", "GPS", "Permit data", "SOP library"],
+      "actions": ["Warn supervisor", "Pause unsafe task", "Create incident record", "Recommend SOP"],
+      "kpis": {"Near misses": 4, "Incident severity": 2, "Audit readiness": 98, "Insurance risk": 12},
+      "target": "Near misses and severity down; audit readiness up"
+    },
+    {
+      "id": "documentation-agent",
+      "name": "Trade Documentation + Release Agent",
+      "domain": "Documents",
+      "mission": "Compresses document cycle time and reduces release disputes across shipping lines, customs and customers.",
+      "signals": ["Email", "EDI", "PDF", "OCR", "Customs status", "Customer portal"],
+      "actions": ["Validate fields", "Request missing docs", "Route approvals", "Update release trail"],
+      "kpis": {"Release cycle": 38, "Exceptions": 12, "Claims": 6, "Cash leakage": 3},
+      "target": "Faster release; fewer exceptions and claims"
+    },
+    {
+      "id": "energy-esg-agent",
+      "name": "Energy, Reefer + ESG Agent",
+      "domain": "Energy",
+      "mission": "Converts energy, reefer and carbon signals into operational recommendations, not just reports.",
+      "signals": ["Meters", "Reefer telemetry", "Crane cycles", "Weather", "Tariff", "Vessel plan"],
+      "actions": ["Shift loads", "Alert reefer exception", "Recommend shore-power window", "Generate ESG report"],
+      "kpis": {"Energy cost index": 86, "Reefer claims": 2, "Carbon visibility": 96, "Peak load": 71},
+      "target": "Peak load and energy cost down; carbon visibility up"
+    },
+    {
+      "id": "billing-agent",
+      "name": "Billing, Demurrage + Revenue Leakage Agent",
+      "domain": "Commercial",
+      "mission": "Aligns operational truth with contracts, invoices and waivers to recover missed charges and reduce disputes.",
+      "signals": ["TOS moves", "Contracts", "Invoices", "Customer agreements", "Exception approvals"],
+      "actions": ["Flag invoice gap", "Recommend charge code", "Route approval", "Generate dispute evidence"],
+      "kpis": {"Leakage recovery": 2.2, "Collection": 93, "Disputes": 8, "DSO": 41},
+      "target": "1-3% revenue leakage recovery; fewer disputes"
+    }
+  ],
+  "events": [
+    "Yard Stack Agent detected export reefer dwell risk; proposed stack shift near Gate 3.",
+    "Berth & Crane Twin simulated ETA drift for Vessel KHM-472; berth swap improves SLA by 7.5 hours.",
+    "Gate Queue Agent throttled 18 early trucks; projected queue reduced by 22%.",
+    "Dispatch Orchestrator prioritized 11 containers for ICD departure cut-off.",
+    "Equipment Health Agent reserved hoist motor spare for RTG-07 based on thermal anomaly.",
+    "Documentation Agent matched eDO and BL; release exception auto-routed to customs desk.",
+    "Energy + ESG Agent shifted reefer load window; peak demand exposure reduced.",
+    "Billing Agent found missing demurrage charge code in customer invoice batch."
+  ]
+}

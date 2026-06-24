@@ -1,0 +1,19 @@
+{
+  "vessels": [
+    {"name":"KHM Pearl", "eta":"12:40", "risk":"ETA drift", "containers":1840, "berth":"B2"},
+    {"name":"Mekong Star", "eta":"15:10", "risk":"Tide window", "containers":1320, "berth":"B1"},
+    {"name":"Sihanouk Express", "eta":"18:20", "risk":"Low", "containers":980, "berth":"B3"}
+  ],
+  "equipment": [
+    {"id":"STS-02", "health":94, "status":"Active"},
+    {"id":"RTG-07", "health":71, "status":"Watch"},
+    {"id":"RMG-03", "health":88, "status":"Active"},
+    {"id":"ReachStacker-11", "health":79, "status":"Service soon"}
+  ],
+  "lanes": [
+    {"gate":"Gate 1", "queue":24, "status":"Heavy"},
+    {"gate":"Gate 2", "queue":11, "status":"Normal"},
+    {"gate":"Gate 3", "queue":7, "status":"Fast"},
+    {"gate":"Rail", "queue":16, "status":"Cut-off risk"}
+  ]
+}
